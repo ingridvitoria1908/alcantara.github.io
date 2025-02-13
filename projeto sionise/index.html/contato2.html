@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contato - Resposta</title>
+    <link href="css/resposta.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+     a {
+              text-decoration: none;
+              color: #e2acd2; 
+              font-size: 1.2em;
+              padding: 10px;
+             
+              border-radius: 5px;
+              margin: 10px;
+           
+          }
+
+          
+          a:hover {
+              background-color: #e0a0b8; 
+          }
+    
+body {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #eecee8; 
+    margin: 0; 
+    color:  #37bee0;
+    padding: 0; 
+    text-align: center; 
+}
+
+
+header {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    color: #eb18a5; 
+}
+
+
+header h1 {
+    margin: 0; 
+    margin-bottom: 10px; 
+}
+
+
+
+.response-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    padding: 20px; 
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+    margin-top: 20px; 
+}
+
+
+.response-container p {
+    margin: 10px 0; 
+}
+</style>
+
+<body>
+    <header>
+        
+    </header>
+    <hr />
+    <div class="response-container">
+        <h2>Parabéns, seu formulário foi enviado com sucesso!</h2>
+        <h3>Informações Coletadas:</h3>
+        <p><strong>Nome:</strong> <span id="response-name"></span></p>
+        <p><strong>E-mail:</strong> <span id="response-email"></span></p>
+        <p><strong>Whatsapp:</strong> <span id="response-whatsapp"></span></p>
+        <p><strong>Mensagem:</strong> <span id="response-message"></span></p>
+        <div class="social-links">
+            
+        </div>
+    </div>
+    <script>
+       
+        const urlParams = new URLSearchParams(window.location.search);
+       
+        document.getElementById('response-name').innerText = urlParams.get('name');
+        document.getElementById('response-email').innerText = urlParams.get('email');
+        document.getElementById('response-whatsapp').innerText = urlParams.get('whatsapp');
+        document.getElementById('response-message').innerText = urlParams.get('message');
+    </script>
+    <a href="index.html"><h2>Voltar</h2></a>
+</body>
+
+</html>
